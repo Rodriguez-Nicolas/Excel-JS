@@ -69,7 +69,7 @@ auto3.modelo = 'F100';
 auto3.marca = 'Ford';
 
 var autos = [auto1, auto2, auto3];
-console.log(autos.length)
+console.log(autos.length);
 
 //funcion que se encarga de mostrar cualquier objeto en una lista
 
@@ -107,13 +107,13 @@ function dibujarLabel(listaEntrada, labelSalida) {
     labelSalida.appendChild(opcion);
   }
 }
-function ordenar(listaEntrada, atributo){
-  
-  for(var i = 0; i < lista.length - 1 ; i++)
-  {
-    if(lista[i].atributo > lista[i + 1].atributo){
+function ordenar(listaEntrada, atributo) {
+  listaOrdenada = listaEntrada;
+  for (var i = 0; i < lista.length - 1; i++) {
+    if (lista[i].atributo > lista[i + 1].atributo) {
       var auxiliar = lista[i];
-
+      lista[i] = lista[i + 1];
+      lista[i + 1] = auxiliar;
     }
   }
   return listaOrdenada;
@@ -129,5 +129,6 @@ for(j=0; j < n-1; j++){          T(n)
 var atributos = Object.keys(casa1);
 var labelSalida = document.getElementById('ordenarPor');
 var div = document.getElementById('tabla');
+
 dibujarLabel(atributos, labelSalida);
 dibujarTabla(autos, div);
